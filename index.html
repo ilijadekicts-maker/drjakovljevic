@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:#F8FAFC;color:#163B53;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+a{color:#176F80;text-decoration:none}
+a:hover{color:#163B53}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+<div style="min-height:100vh">
+
+<div style="background:#163B53;color:#DCECF2;font-size:12px;letter-spacing:.06em;text-align:center;padding:8px 16px;line-height:1.4"><span style="font-weight:700;color:#FFFFFF">Nezvanični koncept redizajna</span> · nije zvanična stranica ordinacije</div>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#pocetak" onClick="{{ closeMenu }}" style="display:flex;flex-direction:column;gap:2px;color:#163B53;line-height:1">
+      <span style="font-family:'Source Serif 4',serif;font-size:23px;font-weight:500;letter-spacing:-.01em">Dr Jakovljević</span>
+      <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#176F80">Stomatološka ordinacija · Trstenik</span>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:36px">
+        <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0" style-hover="color:#176F80">Usluge</a>
+        <a href="#o-ordinaciji" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0" style-hover="color:#176F80">O ordinaciji</a>
+        <a href="#kako-radimo" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0" style-hover="color:#176F80">Kako radimo</a>
+        <a href="#kontakt" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0" style-hover="color:#176F80">Kontakt</a>
+        <a href="tel:+38137715100" style="display:flex;align-items:center;gap:10px;background:#1D8295;color:#FFFFFF;font-size:15px;font-weight:600;padding:12px 20px;border-radius:4px;transition:background .18s ease" style-hover="background:#176F80;color:#FFFFFF"><span style="width:7px;height:7px;border-radius:50%;background:#FFFFFF;opacity:.85"></span>037 715 100</a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ isCompact }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:8px">
+        <a href="tel:+38137715100" aria-label="Pozovite ordinaciju" style="height:44px;padding:0 14px;display:flex;align-items:center;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:14px;font-weight:600">Pozovite</a>
+        <button onClick="{{ toggleMenu }}" aria-label="Meni" style="width:44px;height:44px;border:1px solid #163B53;background:#FFFFFF;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0">
+          <span style="display:block;width:18px;height:1.5px;background:#163B53"></span>
+          <span style="display:block;width:18px;height:1.5px;background:#163B53"></span>
+        </button>
+      </div>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;top:76px;left:0;right:0;bottom:0;background:#FFFFFF;border-top:1px solid #DCECF2;padding:24px clamp(20px,4vw,40px);display:flex;flex-direction:column;justify-content:space-between;overflow:auto">
+      <nav style="display:flex;flex-direction:column">
+        <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" onClick="{{ closeMenu }}" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">Usluge</a>
+        <a href="#o-ordinaciji" onClick="{{ closeMenu }}" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">O ordinaciji</a>
+        <a href="#kako-radimo" onClick="{{ closeMenu }}" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">Kako radimo</a>
+        <a href="#kontakt" onClick="{{ closeMenu }}" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">Kontakt</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:24px">
+        <a href="tel:+38137715100" style="height:56px;display:flex;align-items:center;justify-content:center;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:17px;font-weight:600">037 715 100</a>
+        <a href="tel:+38137710050" style="height:56px;display:flex;align-items:center;justify-content:center;border:1px solid #163B53;color:#163B53;border-radius:4px;font-size:17px;font-weight:600">037 710 050</a>
+        <span style="font-size:14px;color:#4A6578;text-align:center;padding-top:6px">Cara Lazara bb, Trstenik</span>
+      </div>
+    </div>
+  </sc-if>
+</header>
+
+<main id="pocetak">
+
+<section style="max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,104px) clamp(20px,4vw,40px) clamp(56px,7vw,88px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,88px);align-items:center">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;align-items:center;gap:14px"><span style="width:32px;height:1px;background:#1D8295"></span><span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Dr Jakovljević · Cara Lazara bb</span></div>
+      <h1 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(40px,5.6vw,74px);line-height:1.04;letter-spacing:-.02em;margin:0;text-wrap:balance">Stomatološka ordinacija u Trsteniku <em style="font-style:italic;color:#1D8295">od 1990.</em> godine</h1>
+      <p style="font-size:clamp(17px,1.4vw,19px);line-height:1.65;margin:0;max-width:520px;color:#3A5A70;text-wrap:pretty">Lečimo zube odraslih i dece: karijes, kanale korena, bolesti desni. Radimo proteze, implantate i oralnu hirurgiju. Rendgenske snimke pravimo u ordinaciji.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="tel:+38137715100" style="display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 26px;background:#1D8295;color:#FFFFFF;font-size:16px;font-weight:600;border-radius:4px;transition:background .18s ease,transform .18s ease" style-hover="background:#176F80;color:#FFFFFF;transform:translateY(-1px)">Pozovite 037 715 100</a>
+        <a href="#usluge" style="display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 24px;border:1px solid #163B53;color:#163B53;font-size:16px;font-weight:600;border-radius:4px;transition:background .18s ease" style-hover="background:#FFFFFF;color:#163B53">Pogledajte usluge <span style="font-size:18px">↓</span></a>
+      </div>
+    </div>
+    <div data-reveal="2" style="position:relative">
+      <div style="aspect-ratio:{{ heroRatio }};max-height:620px;width:100%;border-radius:6px;overflow:hidden;background:#DCECF2;position:relative;display:flex;align-items:flex-end;justify-content:flex-start;padding:18px">
+        <img src="uploads/hero-ordinacija.webp" width="1122" height="1402" alt="Ilustrativni prikaz stomatološke ordinacije sa stolicom, lampom i monitorom; ne prikazuje prostor ordinacije Dr Jakovljević" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ heroFocus }}">
+        <span style="position:relative;font-family:Manrope,system-ui,sans-serif;font-size:11px;font-weight:500;letter-spacing:.02em;line-height:1.4;color:#163B53;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:4px 9px;border-radius:999px;max-width:calc(100% - 4px)">Ilustrativni prikaz · Ne prikazuje prostor ordinacije</span>
+      </div>
+      <div style="position:absolute;top:-14px;right:-14px;width:96px;height:96px;border:1px solid #1D8295;border-radius:6px;z-index:-1"></div>
+    </div>
+  </div>
+  <div data-reveal="3" style="margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:1px solid #C9DDE6">
+    <div style="padding:22px 24px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Osnovana</span><span style="font-family:'Source Serif 4',serif;font-size:24px">1990. godine</span></div>
+    <div style="padding:22px 24px 0 0;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Adresa</span><span style="font-family:'Source Serif 4',serif;font-size:24px">Cara Lazara bb, Trstenik</span></div>
+    <div style="padding:22px 0 0 0;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Telefoni</span><span style="font-family:'Source Serif 4',serif;font-size:24px;display:flex;flex-wrap:wrap;gap:4px 16px"><a href="tel:+38137715100" style="color:#163B53" style-hover="color:#176F80">037 715 100</a><a href="tel:+38137710050" style="color:#163B53" style-hover="color:#176F80">037 710 050</a></span></div>
+  </div>
+</section>
+
+<section id="usluge" style="background:#FFFFFF;border-top:1px solid #DCECF2;border-bottom:1px solid #DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,4vw,40px)">
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px 64px;align-items:end;margin-bottom:clamp(40px,5vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Usluge</span>
+        <h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(32px,4vw,50px);line-height:1.1;letter-spacing:-.015em;margin:0">Oblasti kojima se bavimo</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.65;margin:0;color:#3A5A70;max-width:460px;text-wrap:pretty">Izaberite oblast da pročitate opširnije objašnjenje na sajtu ordinacije.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:1px;background:#DCECF2;border:1px solid #DCECF2;border-radius:6px;overflow:hidden">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="9">
+        <a href="{{ s.href }}" data-reveal="1" style-focus="outline:2px solid #1D8295;outline-offset:-2px" style="background:#FFFFFF;padding:clamp(24px,2.6vw,36px);display:flex;flex-direction:column;gap:14px;min-height:clamp(180px,16vw,220px);color:#163B53;transition:background .2s ease" style-hover="background:#F8FAFC;color:#163B53">
+          <span style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:600;color:#176F80;font-variant-numeric:tabular-nums">{{ s.n }}</span><span aria-hidden="true" style="font-size:18px;color:#1D8295">→</span></span>
+          <span style="font-family:'Source Serif 4',serif;font-size:clamp(22px,1.9vw,26px);line-height:1.2">{{ s.title }}</span>
+          <span style="font-size:15px;line-height:1.6;color:#3A5A70;text-wrap:pretty">{{ s.text }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="o-ordinaciji" style="background:#DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(48px,7vw,96px)">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:24px">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">O ordinaciji</span>
+      <h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(32px,4vw,50px);line-height:1.1;letter-spacing:-.015em;margin:0;text-wrap:balance">Trudimo se da sačuvamo svaki zub</h2>
+      <p style="font-size:17px;line-height:1.7;margin:0;color:#24475E;max-width:520px;text-wrap:pretty">Na pregledu Vam objasnimo šta je problem i predložimo kako da ga rešimo. Svakom pacijentu otvaramo stomatološki karton, a evidenciju vodimo elektronski.</p>
+      <div style="aspect-ratio:16/10;width:100%;border-radius:6px;overflow:hidden;background:#C9E0EA;position:relative;display:flex;align-items:flex-end;padding:16px;margin-top:12px">
+        <img src="uploads/ordinacija-cekaonica-16x10.webp" width="1600" height="1000" loading="lazy" alt="AI ilustracija stomatološke čekaonice sa recepcijom; ne prikazuje stvarnu ordinaciju" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%">
+        <span style="position:relative;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.04em;line-height:1.5;color:#163B53;background:#FFFFFF;padding:6px 9px;border-radius:3px">AI ilustracija · ne prikazuje stvarnu ordinaciju</span>
+      </div>
+    </div>
+    <div data-reveal="2" style="display:flex;flex-direction:column;justify-content:center">
+      <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#4A6578;margin-bottom:28px">Istorijat</span>
+      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-left:1px solid #8DB6C6">
+        <li style="position:relative;padding:0 0 44px 32px;display:flex;flex-direction:column;gap:10px"><span style="position:absolute;left:-5px;top:12px;width:9px;height:9px;border-radius:50%;background:#1D8295"></span><span style="font-family:'Source Serif 4',serif;font-size:clamp(28px,3vw,36px);line-height:1.1;color:#163B53">1990.</span><span style="font-size:16px;line-height:1.65;color:#24475E;text-wrap:pretty">Ordinaciju osnivaju dr Petar Marinković (1935–1997), specijalista oralne hirurgije, i dr Dragan Jakovljević, stomatolog.</span></li>
+        <li style="position:relative;padding:0 0 44px 32px;display:flex;flex-direction:column;gap:10px"><span style="position:absolute;left:-5px;top:12px;width:9px;height:9px;border-radius:50%;background:#DCECF2;border:1.5px solid #1D8295"></span><span style="font-family:'Source Serif 4',serif;font-size:clamp(28px,3vw,36px);line-height:1.1;color:#163B53">Dve godine kasnije</span><span style="font-size:16px;line-height:1.65;color:#24475E;text-wrap:pretty">Ordinacija se iz prostora iza zgrade suda seli u ulicu Radoja Krstića 3.</span></li>
+        <li style="position:relative;padding:0 0 0 32px;display:flex;flex-direction:column;gap:10px"><span style="position:absolute;left:-5px;top:12px;width:9px;height:9px;border-radius:50%;background:#163B53"></span><span style="font-family:'Source Serif 4',serif;font-size:clamp(28px,3vw,36px);line-height:1.1;color:#163B53">Maj 1995.</span><span style="font-size:16px;line-height:1.65;color:#24475E;text-wrap:pretty">Ordinacija se useljava u zgradu izgrađenu za nju, u ulici Cara Lazara bb.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="kako-radimo" style="max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,4vw,40px)">
+  <div data-reveal="1" style="display:flex;flex-direction:column;gap:18px;max-width:640px;margin-bottom:clamp(40px,5vw,72px)">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Kako radimo</span>
+    <h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(32px,4vw,50px);line-height:1.1;letter-spacing:-.015em;margin:0">Oprema i postupci u ordinaciji</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:clamp(36px,4vw,56px) clamp(32px,4vw,56px)">
+    <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="6">
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:22px">
+        <span style="font-family:'Source Serif 4',serif;font-style:italic;font-size:18px;color:#1D8295">{{ r.n }}</span>
+        <h3 style="font-size:19px;font-weight:600;line-height:1.35;margin:0">{{ r.title }}</h3>
+        <p style="font-size:15px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">{{ r.text }}</p>
+        <sc-if value="{{ r.hasLink }}" hint-placeholder-val="{{ false }}"><a href="{{ r.href }}" style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;min-height:32px;font-size:14px;font-weight:600;color:#176F80" style-hover="color:#163B53" style-focus="outline:2px solid #1D8295;outline-offset:2px">Saznajte više <span aria-hidden="true">→</span></a></sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="kontakt" style="background:#163B53;color:#FFFFFF">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(48px,6vw,88px);align-items:stretch">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:28px">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8FD0DC">Kontakt</span>
+      <h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(36px,4.6vw,58px);line-height:1.05;letter-spacing:-.015em;margin:0">Zakažite pregled</h2>
+      <p style="font-size:18px;line-height:1.65;margin:0;color:#DCECF2;max-width:440px">Za pregled se javite telefonom.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:420px">
+        <a href="tel:+38137715100" style="min-height:64px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:clamp(19px,1.8vw,22px);font-weight:600;transition:background .18s ease" style-hover="background:#23919F;color:#FFFFFF"><span>037 715 100</span><span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85">Pozovite</span></a>
+        <a href="tel:+38137710050" style="min-height:64px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;border:1px solid #5D7E93;color:#FFFFFF;border-radius:4px;font-size:clamp(19px,1.8vw,22px);font-weight:600;transition:border-color .18s ease,background .18s ease" style-hover="border-color:#FFFFFF;background:#1B4560;color:#FFFFFF"><span>037 710 050</span><span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85">Pozovite</span></a>
+      </div>
+      <dl style="margin:8px 0 0;display:grid;grid-template-columns:auto 1fr;gap:14px 28px;font-size:16px;line-height:1.5;max-width:440px;border-top:1px solid #2E5670;padding-top:24px">
+        <dt style="color:#A9C6D4;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding-top:2px">Adresa</dt><dd style="margin:0">Cara Lazara bb, Trstenik</dd>
+        <dt style="color:#A9C6D4;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding-top:2px">Radno vreme</dt><dd style="margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;border:1px dashed #8FA9B8;color:#DCECF2;padding:3px 8px;border-radius:3px">PLACEHOLDER · nije potvrđeno</span></dd>
+        <dt style="color:#A9C6D4;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding-top:2px">E-pošta</dt><dd style="margin:0"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;border:1px dashed #8FA9B8;color:#DCECF2;padding:3px 8px;border-radius:3px">PLACEHOLDER · nije potvrđeno</span></dd>
+      </dl>
+    </div>
+    <div data-reveal="2" style="display:flex;flex-direction:column;gap:12px">
+      <div style="flex:1;min-height:340px;border-radius:6px;background:repeating-linear-gradient(135deg,#1B4560 0 10px,#1F4B67 10px 20px);display:flex;align-items:center;justify-content:center;position:relative;border:1px solid #2E5670">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:24px">
+          <span style="width:14px;height:14px;border-radius:50%;background:#1D8295;box-shadow:0 0 0 8px rgba(29,130,149,.25)"></span>
+          <span style="font-family:'Source Serif 4',serif;font-size:22px">Cara Lazara bb</span>
+          <span style="font-size:14px;color:#A9C6D4">Trstenik</span>
+        </div>
+        <span style="position:absolute;left:14px;bottom:14px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#163B53;background:#FFFFFF;padding:5px 8px;border-radius:3px">PLACEHOLDER · mapa (tačna lokacija nije potvrđena)</span>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Cara+Lazara+bb+Trstenik" target="_blank" rel="noopener" style="align-self:flex-start;font-size:15px;font-weight:600;color:#8FD0DC;padding:10px 0;display:flex;gap:8px" style-hover="color:#FFFFFF">Prikaži na Google mapama ↗</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#F8FAFC;border-top:1px solid #DCECF2;padding-bottom:{{ footerPad }}">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,40px) 32px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'Source Serif 4',serif;font-size:24px">Dr Jakovljević</span>
+        <span style="font-size:14px;line-height:1.6;color:#3A5A70">Stomatološka ordinacija<br>Cara Lazara bb, Trstenik</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Stranica</span>
+        <a href="#pocetak" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Početna</a>
+        <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Usluge</a>
+        <a href="#o-ordinaciji" style="font-size:15px;color:#163B53" style-hover="color:#176F80">O ordinaciji</a>
+        <a href="#kako-radimo" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Kako radimo</a>
+        <a href="#kontakt" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Kontakt</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Za pacijente</span>
+        <a href="https://www.drjakovljevic.rs/index.php/main-faq" target="_blank" rel="noopener" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Česta pitanja ↗</a>
+        <a href="https://www.drjakovljevic.rs/index.php/main-faq/recnik-stomatoloskih-izraza" target="_blank" rel="noopener" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Rečnik stručnih izraza ↗</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Telefoni</span>
+        <a href="tel:+38137715100" style="font-size:15px;color:#163B53" style-hover="color:#176F80">037 715 100</a>
+        <a href="tel:+38137710050" style="font-size:15px;color:#163B53" style-hover="color:#176F80">037 710 050</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #DCECF2;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;line-height:1.6;color:#5B7789">
+      <span><strong style="color:#163B53">Nezvanični koncept redizajna.</strong> Ova stranica nije zvanična internet prezentacija ordinacije niti je od nje odobrena.</span>
+      <span>Ilustrativne slike ne prikazuju stvarnu ordinaciju ni osoblje.</span>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{ showCallBar }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:#FFFFFF;border-top:1px solid #DCECF2;padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:2fr 1fr;gap:8px;box-shadow:0 -6px 24px rgba(22,59,83,.08)">
+    <a href="tel:+38137715100" style="height:50px;display:flex;align-items:center;justify-content:center;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:16px;font-weight:600">Pozovite 037 715 100</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Cara+Lazara+bb+Trstenik" target="_blank" rel="noopener" style="height:50px;display:flex;align-items:center;justify-content:center;border:1px solid #163B53;color:#163B53;border-radius:4px;font-size:16px;font-weight:600">Mapa</a>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1440, y: 0, menuOpen: false, contactVisible: false };
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth, menuOpen: window.innerWidth >= 960 ? false : this.state.menuOpen });
+    this.onScroll = () => { const y = window.scrollY; if ((y > 520) !== (this.state.y > 520)) this.setState({ y }); };
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    const contact = document.getElementById('kontakt');
+    if (contact && 'IntersectionObserver' in window) {
+      this.cio = new IntersectionObserver(es => es.forEach(e => this.setState({ contactVisible: e.isIntersecting })), { threshold: 0.05 });
+      this.cio.observe(contact);
+    }
+    this.setupReveal();
+    this.scrollToHash();
+  }
+  scrollToHash() {
+    // Cross-page links (e.g. Usluge → #kontakt) arrive before sections render; jump once they exist.
+    const id = decodeURIComponent((location.hash || '').slice(1));
+    if (!id) return;
+    let n = 0;
+    const go = () => {
+      const t = document.getElementById(id);
+      if (t) {
+        t.querySelectorAll('[data-reveal]').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 88, behavior: 'auto' });
+      } else if (n++ < 40) setTimeout(go, 50);
+    };
+    setTimeout(go, 30);
+  }
+  componentDidUpdate() { this.setupReveal(); }
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!this.rio) {
+      this.rio = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this.rio.unobserve(e.target); }
+      }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }
+    document.querySelectorAll('[data-reveal]:not([data-rv])').forEach(el => {
+      el.setAttribute('data-rv', '1');
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) return;
+      const d = (parseInt(el.getAttribute('data-reveal'), 10) || 1) * 80;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px)';
+      el.style.transition = `opacity .7s cubic-bezier(.2,.7,.2,1) ${d}ms, transform .7s cubic-bezier(.2,.7,.2,1) ${d}ms`;
+      this.rio.observe(el);
+    });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    this.rio && this.rio.disconnect();
+    this.cio && this.cio.disconnect();
+  }
+  renderVals() {
+    const base = 'https://www.drjakovljevic.rs/index.php/informacije-za-pacijente/';
+    const isDesktop = this.state.w >= 960;
+    const isMobile = this.state.w < 768;
+    const showCallBar = isMobile && this.state.y > 520 && !this.state.contactVisible && !this.state.menuOpen;
+    return {
+      isDesktop,
+      isCompact: !isDesktop,
+      menuOpen: this.state.menuOpen && !isDesktop,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      showCallBar,
+      footerPad: isMobile ? '72px' : '0px',
+      heroRatio: isMobile ? '4/3' : '4/5',
+      heroFocus: isMobile ? '45% 24%' : '50% 50%',
+      services: [
+        { n: '01', title: 'Konzervativna stomatologija', text: 'Popravka zuba oštećenih karijesom i lečenje kanala korena (endodoncija).', href: 'Dr%20Jakovljevic%20-%20Konzervativna%20stomatologija.dc.html' },
+        { n: '02', title: 'Protetika', text: 'Proteze i kombinovani protetski radovi. Zubni tehničar učestvuje od prvog koraka.', href: 'Dr%20Jakovljevic%20-%20Protetika.dc.html' },
+        { n: '03', title: 'Implantologija', text: 'Ugradnja implantata kao zamene za izgubljene zube.', href: 'Dr%20Jakovljevic%20-%20Implantologija.dc.html' },
+        { n: '04', title: 'Oralna hirurgija', text: 'Vađenje zuba, i onih zaostalih u kosti (impaktiranih). Apikotomija, alveotomija, cistektomija.', href: 'Dr%20Jakovljevic%20-%20Oralna%20hirurgija.dc.html' },
+        { n: '05', title: 'Parodontologija', text: 'Lečenje desni i tkiva koje drži zube, od prvih simptoma do hirurških zahvata.', href: 'Dr%20Jakovljevic%20-%20Parodontologija.dc.html' },
+        { n: '06', title: 'Dečija stomatologija', text: 'Prva poseta, lečenje mlečnih i stalnih zuba i zalivanje fisura protiv karijesa.', href: 'Dr%20Jakovljevic%20-%20Decija%20stomatologija.dc.html' },
+        { n: '07', title: 'Ortodoncija', text: 'Ispravljanje krivih zuba i nepravilnog zagrižaja mobilnim i fiksnim aparatima.', href: 'Dr%20Jakovljevic%20-%20Ortodoncija.dc.html' },
+        { n: '08', title: 'Rendgenologija', text: 'Snimci se rade u ordinaciji, od snimka jednog zuba do ortopana obe vilice.', href: 'Dr%20Jakovljevic%20-%20Rendgenologija.dc.html' },
+        { n: '09', title: 'Preventiva', text: 'Saveti za svakodnevnu negu zuba i desni.', href: 'Dr%20Jakovljevic%20-%20Preventiva.dc.html' }
+      ],
+      reasons: [
+        { n: 'i.', title: 'Zubni tehničar od prvog koraka', text: 'Kada radimo protetski rad, doktor, sestra i zubni tehničar sarađuju od prvog koraka.', href: 'Dr%20Jakovljevic%20-%20Protetika.dc.html' },
+        { n: 'ii.', title: 'Pregled intraoralnom kamerom', text: 'Na prvom pregledu kamerom snimamo stanje u ustima. Snimak vidite na velikom monitoru, a možemo ga i sačuvati.' },
+        { n: 'iii.', title: 'Tanke igle i površinska anestezija', text: 'Anesteziju dajemo karpul špricem sa veoma tankom iglom. Pre uboda mesto umrtvimo površinskom anestezijom, a kod dece to radimo uvek.', href: 'Dr%20Jakovljevic%20-%20Oralna%20hirurgija.dc.html#pregled' },
+        { n: 'iv.', title: 'Posebna prostorija za sterilizaciju', text: 'Instrumente sterilišemo u autoklavu klase B, u odvojenoj prostoriji, i pakujemo ih u sterilne kese. Ako želite, pokazaćemo Vam postupak.' },
+        { n: 'v.', title: 'Radiohirurgija', text: 'Neke zahvate na mekom tkivu usta radimo aparatom HF1 Surg. On seče radiotalasima, bez skalpela. To nije zračenje.', href: 'Dr%20Jakovljevic%20-%20Oralna%20hirurgija.dc.html#pregled' },
+        { n: 'vi.', title: 'Rendgen u ordinaciji', text: 'Potrebne snimke pravimo na licu mesta, od snimka jednog zuba do ortopana obe vilice.', href: 'Dr%20Jakovljevic%20-%20Rendgenologija.dc.html' }
+      ].map(r => ({ ...r, hasLink: !!r.href }))
+    };
+  }
+}
+</script>
+</body>
+</html>

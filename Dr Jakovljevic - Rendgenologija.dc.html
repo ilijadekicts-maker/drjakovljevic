@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:#F8FAFC;color:#163B53;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+a{color:#176F80;text-decoration:none}
+a:hover{color:#163B53}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+<div style="min-height:100vh">
+
+<div style="background:#163B53;color:#DCECF2;font-size:12px;letter-spacing:.06em;text-align:center;padding:8px 16px;line-height:1.4"><span style="font-weight:700;color:#FFFFFF">Nezvanični koncept redizajna</span> · nije zvanična stranica ordinacije</div>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="index.html" style="display:flex;flex-direction:column;gap:2px;color:#163B53;line-height:1">
+      <span style="font-family:'Source Serif 4',serif;font-size:23px;font-weight:500;letter-spacing:-.01em">Dr Jakovljević</span>
+      <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#176F80">Stomatološka ordinacija · Trstenik</span>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:36px">
+        <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" aria-current="true" style="font-size:15px;font-weight:600;color:#176F80;padding:8px 0;border-bottom:2px solid #1D8295">Usluge</a>
+        <a href="index.html#o-ordinaciji" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0;border-bottom:2px solid transparent" style-hover="color:#176F80">O ordinaciji</a>
+        <a href="index.html#kako-radimo" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0;border-bottom:2px solid transparent" style-hover="color:#176F80">Kako radimo</a>
+        <a href="index.html#kontakt" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0;border-bottom:2px solid transparent" style-hover="color:#176F80">Kontakt</a>
+        <a href="tel:+38137715100" style="display:flex;align-items:center;gap:10px;background:#1D8295;color:#FFFFFF;font-size:15px;font-weight:600;padding:12px 20px;border-radius:4px;transition:background .18s ease" style-hover="background:#176F80;color:#FFFFFF"><span style="width:7px;height:7px;border-radius:50%;background:#FFFFFF;opacity:.85"></span>037 715 100</a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ isCompact }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:8px">
+        <a href="tel:+38137715100" aria-label="Pozovite ordinaciju" style="height:44px;padding:0 14px;display:flex;align-items:center;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:14px;font-weight:600">Pozovite</a>
+        <button onClick="{{ toggleMenu }}" aria-label="Meni" style="width:44px;height:44px;border:1px solid #163B53;background:#FFFFFF;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0">
+          <span style="display:block;width:18px;height:1.5px;background:#163B53"></span>
+          <span style="display:block;width:18px;height:1.5px;background:#163B53"></span>
+        </button>
+      </div>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;top:76px;left:0;right:0;bottom:0;background:#FFFFFF;border-top:1px solid #DCECF2;padding:24px clamp(20px,4vw,40px);display:flex;flex-direction:column;justify-content:space-between;overflow:auto">
+      <nav style="display:flex;flex-direction:column">
+        <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" aria-current="true" style="font-family:'Source Serif 4',serif;font-size:28px;color:#176F80;padding:16px 0;border-bottom:1px solid #DCECF2;display:flex;justify-content:space-between;align-items:center">Usluge<span style="font-family:Manrope,sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">Rendgenologija</span></a>
+        <a href="index.html#o-ordinaciji" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">O ordinaciji</a>
+        <a href="index.html#kako-radimo" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">Kako radimo</a>
+        <a href="index.html#kontakt" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">Kontakt</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:24px">
+        <a href="tel:+38137715100" style="height:56px;display:flex;align-items:center;justify-content:center;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:17px;font-weight:600">037 715 100</a>
+        <a href="tel:+38137710050" style="height:56px;display:flex;align-items:center;justify-content:center;border:1px solid #163B53;color:#163B53;border-radius:4px;font-size:17px;font-weight:600">037 710 050</a>
+        <span style="font-size:14px;color:#4A6578;text-align:center;padding-top:6px">Cara Lazara bb, Trstenik</span>
+      </div>
+    </div>
+  </sc-if>
+</header>
+
+<main id="pocetak">
+
+<section style="max-width:1200px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,4vw,40px) clamp(56px,7vw,96px)">
+  <nav aria-label="Putanja" style="display:flex;flex-wrap:wrap;gap:8px 10px;font-size:14px;color:#5B7789;margin-bottom:clamp(28px,4vw,48px)">
+    <a href="index.html" style="color:#176F80" style-hover="color:#163B53">Početna</a><span aria-hidden="true">/</span>
+    <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" style="color:#176F80" style-hover="color:#163B53">Usluge</a><span aria-hidden="true">/</span>
+    <span aria-current="page" style="color:#163B53">Rendgenologija</span>
+  </nav>
+  <div style="display:flex;flex-wrap:wrap;gap:40px clamp(48px,7vw,112px);align-items:flex-start">
+    <div style="flex:3 1 460px;min-width:0;display:flex;flex-direction:column;gap:26px">
+      <div style="display:flex;align-items:center;gap:14px"><span style="width:32px;height:1px;background:#1D8295"></span><span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Usluga 08 · Dijagnostika</span></div>
+      <h1 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(40px,5.4vw,70px);line-height:1.04;letter-spacing:-.02em;margin:0;text-wrap:balance">Rendgenologija</h1>
+      <p style="font-size:clamp(17px,1.4vw,19px);line-height:1.65;margin:0;max-width:600px;color:#3A5A70;text-wrap:pretty">Rendgenski snimak pokazuje ono što se pregledom usta ne vidi: koren zuba, kost oko njega i promene ispod krunice. Da li je snimak potreban i koji, odlučuje stomatolog.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="tel:+38137715100" style="display:inline-flex;align-items:center;min-height:54px;padding:0 26px;background:#1D8295;color:#FFFFFF;font-size:16px;font-weight:600;border-radius:4px;transition:background .18s ease" style-hover="background:#176F80;color:#FFFFFF">Zakažite pregled · 037 715 100</a>
+        <a href="#vrste" style="display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 24px;border:1px solid #163B53;color:#163B53;font-size:16px;font-weight:600;border-radius:4px;transition:background .18s ease" style-hover="background:#FFFFFF;color:#163B53">Vrste snimaka <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <aside style="flex:1 1 260px;max-width:100%;border-top:1px solid #163B53;padding-top:18px;display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789;margin-bottom:8px">Na ovoj stranici</span>
+      <a href="#zasto" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53;border-bottom:1px solid #DCECF2" style-hover="color:#176F80">Zašto se snima <span aria-hidden="true" style="color:#1D8295">→</span></a><a href="#vrste" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53;border-bottom:1px solid #DCECF2" style-hover="color:#176F80">Vrste snimaka <span aria-hidden="true" style="color:#1D8295">→</span></a><a href="#snimanje" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53;border-bottom:1px solid #DCECF2" style-hover="color:#176F80">Kako izgleda snimanje <span aria-hidden="true" style="color:#1D8295">→</span></a><a href="#zastita" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53;border-bottom:1px solid #DCECF2" style-hover="color:#176F80">Zračenje i zaštita <span aria-hidden="true" style="color:#1D8295">→</span></a><a href="#opsirnije" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53" style-hover="color:#176F80">Tekstovi za čitanje <span aria-hidden="true" style="color:#1D8295">→</span></a>
+    </aside>
+  </div>
+</section>
+
+<section id="zasto" style="background:#FFFFFF;border-top:1px solid #DCECF2;border-bottom:1px solid #DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:32px clamp(40px,5vw,72px)">
+    <div style="flex:1 1 340px;display:flex;flex-direction:column;gap:16px"><span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Opšte informacije</span><h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0;text-wrap:balance">Zašto se snimaju zubi</h2></div>
+    <div style="flex:2 1 420px;display:flex;flex-wrap:wrap;gap:32px clamp(32px,4vw,56px)">
+      <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Deo pregleda</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Prema sajtu ordinacije, snimak pokazuje detalje koje stomatolog ne može da vidi običnim pregledom. Dijagnoza se postavlja na osnovu pregleda usta i snimka zajedno.</p></div>
+      <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Samo kada je potrebno</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Da li je snimanje potrebno i koja vrsta snimka, odlučuje stomatolog. Snimak se ne radi rutinski, već kada je potreban za dijagnozu ili lečenje.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="vrste" style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:32px clamp(40px,5vw,72px);align-items:flex-start">
+  <div style="flex:1 1 260px;display:flex;flex-direction:column;gap:16px">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Šta radimo</span><h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0;text-wrap:balance">Vrste snimaka</h2>
+    <p style="font-size:16px;line-height:1.65;margin:0;color:#3A5A70;max-width:380px">Ove četiri vrste snimaka ordinacija navodi kao usluge na svom sajtu, u tekstu iz 2015. Da li se danas rade svi, nije potvrđeno.</p>
+    <span style="align-self:flex-start;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.03em;color:#163B53;border:1px dashed #6F96A8;padding:3px 8px;border-radius:3px">Današnja ponuda nije potvrđena</span>
+  </div>
+  <dl style="flex:999 1 560px;min-width:0;margin:0;display:flex;flex-direction:column;border-top:1px solid #DCECF2">
+    <div style="display:flex;flex-wrap:wrap;gap:6px 32px;padding:24px 0;border-bottom:1px solid #DCECF2"><dt style="flex:1 1 220px;font-family:'Source Serif 4',serif;font-size:24px;line-height:1.25">Retrokoronarni snimak<span style="display:block;font-family:Manrope,sans-serif;font-size:13px;font-weight:600;color:#176F80;margin-top:6px">Mali snimak</span></dt><dd style="flex:2 1 320px;margin:0;font-size:16px;line-height:1.7;color:#3A5A70;text-wrap:pretty">Prikazuje krunice zuba i promene na njima.</dd></div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px 32px;padding:24px 0;border-bottom:1px solid #DCECF2"><dt style="flex:1 1 220px;font-family:'Source Serif 4',serif;font-size:24px;line-height:1.25">Retroalveolarni snimak<span style="display:block;font-family:Manrope,sans-serif;font-size:13px;font-weight:600;color:#176F80;margin-top:6px">Mali snimak</span></dt><dd style="flex:2 1 320px;margin:0;font-size:16px;line-height:1.7;color:#3A5A70;text-wrap:pretty">Prikazuje ceo zub, zajedno sa korenom i kosti oko njega.</dd></div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px 32px;padding:24px 0;border-bottom:1px solid #DCECF2"><dt style="flex:1 1 220px;font-family:'Source Serif 4',serif;font-size:24px;line-height:1.25">Nagrizni snimak<span style="display:block;font-family:Manrope,sans-serif;font-size:13px;font-weight:600;color:#176F80;margin-top:6px">Mali snimak</span></dt><dd style="flex:2 1 320px;margin:0;font-size:16px;line-height:1.7;color:#3A5A70;text-wrap:pretty">Ordinacija ga navodi kao uslugu. Opis na sajtu ne postoji.</dd></div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px 32px;padding:24px 0"><dt style="flex:1 1 220px;font-family:'Source Serif 4',serif;font-size:24px;line-height:1.25">Ortopan snimak<span style="display:block;font-family:Manrope,sans-serif;font-size:13px;font-weight:600;color:#176F80;margin-top:6px">Veliki snimak (OPT)</span></dt><dd style="flex:2 1 320px;margin:0;font-size:16px;line-height:1.7;color:#3A5A70;text-wrap:pretty">Prikazuje obe vilice i sve zube na jednom snimku, kao i dno sinusa. Prema sajtu ordinacije, po potrebi se snimaju i vilični zglobovi.</dd></div>
+  </dl>
+</section>
+
+<section id="snimanje" style="background:#DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:40px clamp(48px,7vw,96px);align-items:flex-start">
+    <div style="flex:1 1 360px;display:flex;flex-direction:column;gap:20px">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">U ordinaciji</span><h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0;text-wrap:balance">Kako izgleda snimanje</h2>
+      <p style="font-size:17px;line-height:1.7;margin:0;color:#24475E;max-width:460px;text-wrap:pretty">Ovako snimanje opisuje sajt ordinacije. Snimci se rade u ordinaciji, pa ne morate na drugo mesto.</p>
+    </div>
+    <ol style="flex:1 1 420px;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-left:1px solid #8DB6C6">
+      <li style="position:relative;padding:0 0 30px 30px;display:flex;flex-direction:column;gap:8px"><span style="position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:#1D8295"></span><strong style="font-size:17px;font-weight:600">Odluka o snimku</strong><span style="font-size:16px;line-height:1.65;color:#24475E">Stomatolog odluči da li je snimak potreban i koji.</span></li>
+      <li style="position:relative;padding:0 0 30px 30px;display:flex;flex-direction:column;gap:8px"><span style="position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:#1D8295"></span><strong style="font-size:17px;font-weight:600">Zaštita</strong><span style="font-size:16px;line-height:1.65;color:#24475E">Pre snimanja primenjuju se zaštitne mere, prema vrsti snimka i važećim pravilima.</span></li>
+      <li style="position:relative;padding:0 0 30px 30px;display:flex;flex-direction:column;gap:8px"><span style="position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:#1D8295"></span><strong style="font-size:17px;font-weight:600">Snimanje</strong><span style="font-size:16px;line-height:1.65;color:#24475E">Za vreme snimanja osoblje izlazi iz prostorije.</span></li>
+      <li style="position:relative;padding:0 0 0 30px;display:flex;flex-direction:column;gap:8px"><span style="position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:#163B53"></span><strong style="font-size:17px;font-weight:600">Pregled snimka</strong><span style="font-size:16px;line-height:1.65;color:#24475E">Stomatolog pregleda snimak i objasni Vam šta pokazuje.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="zastita" style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+  <div style="display:flex;flex-wrap:wrap;gap:20px clamp(40px,5vw,72px);align-items:flex-end"><div style="flex:1 1 380px;display:flex;flex-direction:column;gap:16px"><span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Zračenje i zaštita</span><h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0;text-wrap:balance">Šta treba da znate o zračenju</h2></div><div style="flex:1 1 360px;display:flex;flex-direction:column;gap:12px;max-width:520px"><p style="font-size:17px;line-height:1.65;margin:0;color:#3A5A70;text-wrap:pretty">Rendgensko snimanje koristi jonizujuće zračenje. Zato se snimak radi samo kada je potreban i uz zaštitu.</p></div></div>
+  <div style="display:flex;flex-wrap:wrap;gap:32px clamp(40px,5vw,72px)">
+    <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Zaštita pri snimanju</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Zaštitne mere određuju se prema vrsti snimanja i važećim pravilima. Osoblje za vreme snimanja napušta prostoriju.</p></div>
+    <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Ako ste trudni</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Ako ste trudni ili postoji mogućnost trudnoće, obavestite stomatologa pre snimanja. Stomatolog će proceniti da li je snimak potreban i koje mere zaštite treba primeniti.</p></div>
+    <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Pitajte stomatologa</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Ako imate pitanja o zračenju, posebno kod snimanja dece, pitajte stomatologa pre snimanja.</p></div>
+  </div>
+  <p style="margin:0;font-size:15px;line-height:1.65;color:#3A5A70;max-width:760px;border-left:2px solid #9BC8D2;padding-left:18px;text-wrap:pretty">Sajt ordinacije iz 2015. navodi da su tada korišćeni osetljivi filmovi i digitalno snimanje (radioviziografija). Kojom opremom ordinacija danas snima, nije potvrđeno.</p>
+</section>
+
+<section id="opsirnije" style="max-width:1200px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between;align-items:flex-end">
+      <h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(26px,2.8vw,36px);line-height:1.15;margin:0">Tekstovi za čitanje</h2>
+      <span style="font-size:14px;color:#5B7789">Otvaraju se na postojećem sajtu ordinacije.</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:1px;background:#DCECF2;border:1px solid #DCECF2;border-radius:6px;overflow:hidden">
+      <sc-for list="{{ reading }}" as="r" hint-placeholder-count="2">
+        <a href="{{ r.href }}" target="_blank" rel="noopener" style="flex:1 1 {{ readBasis }};background:#FFFFFF;padding:22px 24px;min-height:72px;display:flex;justify-content:space-between;align-items:center;gap:16px;color:#163B53;font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#F8FAFC;color:#163B53"><span style="display:flex;flex-direction:column;gap:4px">{{ r.title }}<span style="font-size:13px;font-weight:400;line-height:1.5;color:#5B7789">{{ r.note }}</span></span><span aria-hidden="true" style="color:#1D8295">↗</span></a>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;border-top:1px solid #DCECF2;padding-top:24px">
+      <a href="Dr%20Jakovljevic%20-%20Ortodoncija.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;font-size:15px;font-weight:600;color:#163B53" style-hover="color:#176F80"><span aria-hidden="true">←</span> Ortodoncija</a>
+      <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;font-size:15px;font-weight:600;color:#163B53" style-hover="color:#176F80">Sve usluge</a>
+      <a href="Dr%20Jakovljevic%20-%20Preventiva.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;font-size:15px;font-weight:600;color:#163B53" style-hover="color:#176F80">Sledeća oblast: Preventiva <span aria-hidden="true">→</span></a>
+    </div>
+</section>
+
+<section id="kontakt" style="background:#163B53;color:#FFFFFF">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:40px clamp(48px,6vw,96px);align-items:flex-end">
+    <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:24px">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8FD0DC">Zakazivanje</span>
+      <h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(34px,4.4vw,54px);line-height:1.08;letter-spacing:-.015em;margin:0;text-wrap:balance">Doktor Vam je preporučio snimak?</h2>
+      <p style="font-size:18px;line-height:1.65;margin:0;color:#DCECF2;max-width:460px">Pozovite nas i dogovorite termin. Snimci se rade u ordinaciji.</p>
+      <span style="font-size:15px;color:#A9C6D4">Cara Lazara bb, Trstenik · <a href="index.html#kontakt" style="color:#8FD0DC;text-decoration:underline;text-underline-offset:3px" style-hover="color:#FFFFFF">Svi kontakt podaci</a></span>
+    </div>
+    <div style="flex:1 1 320px;max-width:440px;display:flex;flex-direction:column;gap:12px">
+      <a href="tel:+38137715100" style="min-height:64px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:clamp(19px,1.8vw,22px);font-weight:600;transition:background .18s ease" style-hover="background:#23919F;color:#FFFFFF"><span>037 715 100</span><span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85">Pozovite</span></a>
+      <a href="tel:+38137710050" style="min-height:64px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;border:1px solid #5D7E93;color:#FFFFFF;border-radius:4px;font-size:clamp(19px,1.8vw,22px);font-weight:600;transition:border-color .18s ease,background .18s ease" style-hover="border-color:#FFFFFF;background:#1B4560;color:#FFFFFF"><span>037 710 050</span><span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85">Pozovite</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#F8FAFC;border-top:1px solid #DCECF2;padding-bottom:{{ footerPad }}">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,40px) 32px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'Source Serif 4',serif;font-size:24px">Dr Jakovljević</span>
+        <span style="font-size:14px;line-height:1.6;color:#3A5A70">Stomatološka ordinacija<br>Cara Lazara bb, Trstenik</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Stranica</span>
+        <a href="index.html" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Početna</a>
+        <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" style="font-size:15px;color:#176F80;font-weight:600">Usluge</a>
+        <a href="index.html#o-ordinaciji" style="font-size:15px;color:#163B53" style-hover="color:#176F80">O ordinaciji</a>
+        <a href="index.html#kako-radimo" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Kako radimo</a>
+        <a href="index.html#kontakt" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Kontakt</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Za pacijente</span>
+        <a href="https://www.drjakovljevic.rs/index.php/main-faq" target="_blank" rel="noopener" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Česta pitanja ↗</a>
+        <a href="https://www.drjakovljevic.rs/index.php/main-faq/recnik-stomatoloskih-izraza" target="_blank" rel="noopener" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Rečnik stručnih izraza ↗</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Telefoni</span>
+        <a href="tel:+38137715100" style="font-size:15px;color:#163B53" style-hover="color:#176F80">037 715 100</a>
+        <a href="tel:+38137710050" style="font-size:15px;color:#163B53" style-hover="color:#176F80">037 710 050</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #DCECF2;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;line-height:1.6;color:#5B7789">
+      <span><strong style="color:#163B53">Nezvanični koncept redizajna.</strong> Ova stranica nije zvanična internet prezentacija ordinacije niti je od nje odobrena.</span>
+      <span>Stručni sadržaj je prepričan sa postojećeg sajta ordinacije.</span>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{ showCallBar }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:#FFFFFF;border-top:1px solid #DCECF2;padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:2fr 1fr;gap:8px;box-shadow:0 -6px 24px rgba(22,59,83,.08)">
+    <a href="tel:+38137715100" style="height:50px;display:flex;align-items:center;justify-content:center;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:16px;font-weight:600">Pozovite 037 715 100</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Cara+Lazara+bb+Trstenik" target="_blank" rel="noopener" style="height:50px;display:flex;align-items:center;justify-content:center;border:1px solid #163B53;color:#163B53;border-radius:4px;font-size:16px;font-weight:600">Mapa</a>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1440, y: 0, menuOpen: false, contactVisible: false };
+  componentDidMount() {
+    this.onResize = () => { this.setState({ w: window.innerWidth, menuOpen: window.innerWidth >= 960 ? false : this.state.menuOpen }); this.tick(); };
+    this.onScroll = () => this.tick();
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.tick();
+    const id = decodeURIComponent((location.hash || '').slice(1));
+    if (id) {
+      let n = 0;
+      const go = () => {
+        const t = document.getElementById(id);
+        if (t) {
+          let user = false;
+          const stop = () => { user = true; };
+          ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(e => window.addEventListener(e, stop, { once: true, passive: true }));
+          const snap = () => { if (!user) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 76, behavior: 'auto' }); };
+          snap();
+          [150, 400, 800, 1400, 2200, 3200].forEach(ms => setTimeout(snap, ms));
+        } else if (n++ < 200) setTimeout(go, 50);
+      };
+      setTimeout(go, 30);
+    }
+  }
+  tick() {
+    const vh = window.innerHeight;
+    const y = window.scrollY;
+    const c = document.getElementById('kontakt');
+    const cv = !!c && c.getBoundingClientRect().top < vh;
+    if ((y > 420) !== (this.state.y > 420) || cv !== this.state.contactVisible) this.setState({ y, contactVisible: cv });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+  }
+  renderVals() {
+    const isDesktop = this.state.w >= 960;
+    const isMobile = this.state.w < 768;
+    const k = 'https://www.drjakovljevic.rs/index.php/';
+    return {
+      isDesktop,
+      isCompact: !isDesktop,
+      menuOpen: this.state.menuOpen && !isDesktop,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      showCallBar: isMobile && this.state.y > 420 && !this.state.contactVisible && !this.state.menuOpen,
+      footerPad: isMobile ? '72px' : '0px',
+      stepCols: this.state.w >= 900 ? 'repeat(4,minmax(0,1fr))' : this.state.w >= 560 ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)',
+      readBasis: this.state.w >= 960 ? 'calc(25% - 1px)' : this.state.w >= 600 ? 'calc(50% - 1px)' : '100%',
+      faq: [
+        ['Da li je ortodoncija samo za decu?','Nije. Prema tekstu sa sajta, aparat nose i odrasli. Kod dece se zubi lakše pomeraju jer vilice još rastu.'],
+        ['Da li su fiksni aparati bolji od mobilnih?','Prema tekstu sa sajta, to se ne može reći. Sve zavisi od slučaja, a vrstu aparata određuje ortodont.'],
+        ['Šta ako se bravica odlepi?','Prema tekstu sa sajta, odlepljena bravica se ponovo postavlja na kontroli. Javite se ordinaciji da se dogovorite kada da dođete. Ako bravicu slučajno progutate, obratite se lekaru ili stomatologu. Ako imate kašalj, gušenje ili otežano disanje, odmah pozovite hitnu pomoć (194).']
+      ].map(([q, a], i) => { const open = (this.state.faqOpen || {})[i] === true; return { q, a, btnId: 'faq-q' + i, panelId: 'faq-a' + i, expanded: open ? 'true' : 'false', hidden: !open, icon: open ? '−' : '+', toggle: () => this.setState(s => ({ faqOpen: { ...(s.faqOpen || {}), [i]: !((s.faqOpen || {})[i] === true) } })) }; }),
+      reading: [
+        { title: 'Tipovi rendgen snimaka', note: 'Vrste snimaka i zaštita', href: 'https://www.drjakovljevic.rs/index.php/informacije-za-pacijente/rendgenologija' },
+        { title: 'Naša ordinacija', note: 'Snimanje na prvom pregledu', href: 'https://www.drjakovljevic.rs/index.php/ordinacija' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

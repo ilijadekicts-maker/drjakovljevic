@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:#F8FAFC;color:#163B53;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+a{color:#176F80;text-decoration:none}
+a:hover{color:#163B53}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+<div style="min-height:100vh">
+
+<div style="background:#163B53;color:#DCECF2;font-size:12px;letter-spacing:.06em;text-align:center;padding:8px 16px;line-height:1.4"><span style="font-weight:700;color:#FFFFFF">Nezvanični koncept redizajna</span> · nije zvanična stranica ordinacije</div>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="index.html" style="display:flex;flex-direction:column;gap:2px;color:#163B53;line-height:1">
+      <span style="font-family:'Source Serif 4',serif;font-size:23px;font-weight:500;letter-spacing:-.01em">Dr Jakovljević</span>
+      <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#176F80">Stomatološka ordinacija · Trstenik</span>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:36px">
+        <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" aria-current="true" style="font-size:15px;font-weight:600;color:#176F80;padding:8px 0;border-bottom:2px solid #1D8295">Usluge</a>
+        <a href="index.html#o-ordinaciji" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0;border-bottom:2px solid transparent" style-hover="color:#176F80">O ordinaciji</a>
+        <a href="index.html#kako-radimo" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0;border-bottom:2px solid transparent" style-hover="color:#176F80">Kako radimo</a>
+        <a href="index.html#kontakt" style="font-size:15px;font-weight:500;color:#163B53;padding:8px 0;border-bottom:2px solid transparent" style-hover="color:#176F80">Kontakt</a>
+        <a href="tel:+38137715100" style="display:flex;align-items:center;gap:10px;background:#1D8295;color:#FFFFFF;font-size:15px;font-weight:600;padding:12px 20px;border-radius:4px;transition:background .18s ease" style-hover="background:#176F80;color:#FFFFFF"><span style="width:7px;height:7px;border-radius:50%;background:#FFFFFF;opacity:.85"></span>037 715 100</a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ isCompact }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:8px">
+        <a href="tel:+38137715100" aria-label="Pozovite ordinaciju" style="height:44px;padding:0 14px;display:flex;align-items:center;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:14px;font-weight:600">Pozovite</a>
+        <button onClick="{{ toggleMenu }}" aria-label="Meni" style="width:44px;height:44px;border:1px solid #163B53;background:#FFFFFF;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0">
+          <span style="display:block;width:18px;height:1.5px;background:#163B53"></span>
+          <span style="display:block;width:18px;height:1.5px;background:#163B53"></span>
+        </button>
+      </div>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;top:76px;left:0;right:0;bottom:0;background:#FFFFFF;border-top:1px solid #DCECF2;padding:24px clamp(20px,4vw,40px);display:flex;flex-direction:column;justify-content:space-between;overflow:auto">
+      <nav style="display:flex;flex-direction:column">
+        <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" aria-current="true" style="font-family:'Source Serif 4',serif;font-size:28px;color:#176F80;padding:16px 0;border-bottom:1px solid #DCECF2;display:flex;justify-content:space-between;align-items:center">Usluge<span style="font-family:Manrope,sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">Preventiva</span></a>
+        <a href="index.html#o-ordinaciji" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">O ordinaciji</a>
+        <a href="index.html#kako-radimo" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">Kako radimo</a>
+        <a href="index.html#kontakt" style="font-family:'Source Serif 4',serif;font-size:28px;color:#163B53;padding:16px 0;border-bottom:1px solid #DCECF2">Kontakt</a>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:24px">
+        <a href="tel:+38137715100" style="height:56px;display:flex;align-items:center;justify-content:center;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:17px;font-weight:600">037 715 100</a>
+        <a href="tel:+38137710050" style="height:56px;display:flex;align-items:center;justify-content:center;border:1px solid #163B53;color:#163B53;border-radius:4px;font-size:17px;font-weight:600">037 710 050</a>
+        <span style="font-size:14px;color:#4A6578;text-align:center;padding-top:6px">Cara Lazara bb, Trstenik</span>
+      </div>
+    </div>
+  </sc-if>
+</header>
+
+<main id="pocetak">
+
+<section style="max-width:1200px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,4vw,40px) clamp(56px,7vw,96px)">
+  <nav aria-label="Putanja" style="display:flex;flex-wrap:wrap;gap:8px 10px;font-size:14px;color:#5B7789;margin-bottom:clamp(28px,4vw,48px)">
+    <a href="index.html" style="color:#176F80" style-hover="color:#163B53">Početna</a><span aria-hidden="true">/</span>
+    <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" style="color:#176F80" style-hover="color:#163B53">Usluge</a><span aria-hidden="true">/</span>
+    <span aria-current="page" style="color:#163B53">Preventiva</span>
+  </nav>
+  <div style="display:flex;flex-wrap:wrap;gap:40px clamp(48px,7vw,112px);align-items:flex-start">
+    <div style="flex:3 1 460px;min-width:0;display:flex;flex-direction:column;gap:26px">
+      <div style="display:flex;align-items:center;gap:14px"><span style="width:32px;height:1px;background:#1D8295"></span><span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Usluga 09 · Prevencija</span></div>
+      <h1 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(40px,5.4vw,70px);line-height:1.04;letter-spacing:-.02em;margin:0;text-wrap:balance">Preventiva</h1>
+      <p style="font-size:clamp(17px,1.4vw,19px);line-height:1.65;margin:0;max-width:600px;color:#3A5A70;text-wrap:pretty">Preventiva su postupci koji smanjuju rizik od karijesa i bolesti desni, pre nego što nastanu ili dok su u početku. Deo se radi u ordinaciji, a deo kod kuće, svakog dana.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="tel:+38137715100" style="display:inline-flex;align-items:center;min-height:54px;padding:0 26px;background:#1D8295;color:#FFFFFF;font-size:16px;font-weight:600;border-radius:4px;transition:background .18s ease" style-hover="background:#176F80;color:#FFFFFF">Zakažite pregled · 037 715 100</a>
+        <a href="#usluge" style="display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 24px;border:1px solid #163B53;color:#163B53;font-size:16px;font-weight:600;border-radius:4px;transition:background .18s ease" style-hover="background:#FFFFFF;color:#163B53">Šta radimo <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <aside style="flex:1 1 260px;max-width:100%;border-top:1px solid #163B53;padding-top:18px;display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789;margin-bottom:8px">Na ovoj stranici</span>
+      <a href="#zasto" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53;border-bottom:1px solid #DCECF2" style-hover="color:#176F80">Zašto preventiva <span aria-hidden="true" style="color:#1D8295">→</span></a><a href="#usluge" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53;border-bottom:1px solid #DCECF2" style-hover="color:#176F80">Šta radimo <span aria-hidden="true" style="color:#1D8295">→</span></a><a href="#kod-kuce" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53;border-bottom:1px solid #DCECF2" style-hover="color:#176F80">Prevencija kod kuće <span aria-hidden="true" style="color:#1D8295">→</span></a><a href="#deca" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53;border-bottom:1px solid #DCECF2" style-hover="color:#176F80">Deca i trudnoća <span aria-hidden="true" style="color:#1D8295">→</span></a><a href="#opsirnije" style="display:flex;justify-content:space-between;align-items:center;min-height:44px;font-size:15px;color:#163B53" style-hover="color:#176F80">Tekstovi za čitanje <span aria-hidden="true" style="color:#1D8295">→</span></a>
+    </aside>
+  </div>
+</section>
+
+<section id="zasto" style="background:#FFFFFF;border-top:1px solid #DCECF2;border-bottom:1px solid #DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:32px clamp(40px,5vw,72px)">
+    <div style="flex:1 1 340px;display:flex;flex-direction:column;gap:16px"><span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Opšte informacije</span><h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0;text-wrap:balance">Zašto su važni redovni pregledi</h2></div>
+    <div style="flex:2 1 420px;display:flex;flex-wrap:wrap;gap:32px clamp(32px,4vw,56px)">
+      <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Naslage se skupljaju svaki dan</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Posle jela na zubima ostaju meke naslage. Kada se u njima nasele bakterije, nastaje plak, a od plaka vremenom kamenac. Kamenac kod kuće ne može da se ukloni.</p></div>
+      <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Na kontroli se vidi više</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Na pregledu stomatolog proveri zube, plombe i protetske radove i oceni kako održavate higijenu. Koliko često treba da dolazite, dogovorićete se sa stomatologom.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="usluge" style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+  <div style="display:flex;flex-wrap:wrap;gap:20px clamp(40px,5vw,72px);align-items:flex-end"><div style="flex:1 1 380px;display:flex;flex-direction:column;gap:16px"><span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Šta radimo</span><h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0;text-wrap:balance">Preventivne mere navedene na postojećem sajtu</h2></div><div style="flex:1 1 360px;display:flex;flex-direction:column;gap:12px;max-width:520px"><p style="font-size:17px;line-height:1.65;margin:0;color:#3A5A70;text-wrap:pretty">Ovo su mere koje ordinacija navodi na svom sajtu, u tekstovima iz 2013–2015. Da li se sve rade i danas, nije potvrđeno. Koja mera Vam je potrebna, odlučuje stomatolog.</p><span style="align-self:flex-start;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.03em;color:#163B53;border:1px dashed #6F96A8;padding:3px 8px;border-radius:3px">Današnja ponuda nije potvrđena</span></div></div>
+  <div style="display:flex;flex-wrap:wrap;gap:32px clamp(32px,4vw,56px)">
+    <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:4px"><h3 style="font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789;margin:0 0 10px">Protiv karijesa</h3><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Zalivanje fisura</span><span style="font-size:15px;line-height:1.55;color:#3A5A70">Zaštita udubljenja na žvačnoj površini zuba.</span></div><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Fluorisanje zuba</span></div><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Preventivna odontotomija</span></div><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Preventivno plombiranje</span></div></div>
+    <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:4px"><h3 style="font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789;margin:0 0 10px">Protiv bolesti desni</h3><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Uklanjanje mekih naslaga, plaka i kamenca</span></div><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Popravka loših plombi i protetskih radova</span></div><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Obrada parodontalnih džepova</span><span style="font-size:15px;line-height:1.55;color:#3A5A70"><a href="Dr%20Jakovljevic%20-%20Parodontologija.dc.html" style="color:#176F80;text-decoration:underline;text-underline-offset:3px" style-hover="color:#163B53">Parodontologija</a></span></div><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Hirurško lečenje bolesti desni</span></div></div>
+    <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:4px"><h3 style="font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789;margin:0 0 10px">Ostale oblasti</h3><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Rano otkrivanje promena na sluzokoži usta</span></div><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Rano otkrivanje nepravilnosti zagrižaja</span></div><div style="padding:14px 0;border-top:1px solid #DCECF2;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600;line-height:1.35">Zbrinjavanje povreda zuba</span><span style="font-size:15px;line-height:1.55;color:#3A5A70">Učvršćivanje zuba, vraćanje izbijenog zuba, lečenje preloma.</span></div></div>
+  </div>
+</section>
+
+<section id="kod-kuce" style="background:#FFFFFF;border-top:1px solid #DCECF2;border-bottom:1px solid #DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:20px clamp(40px,5vw,72px);align-items:flex-end"><div style="flex:1 1 380px;display:flex;flex-direction:column;gap:16px"><span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Kod kuće</span><h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0;text-wrap:balance">Prevencija kod kuće</h2></div><div style="flex:1 1 360px;display:flex;flex-direction:column;gap:12px;max-width:520px"><p style="font-size:17px;line-height:1.65;margin:0;color:#3A5A70;text-wrap:pretty">Ovo su opšti saveti iz tekstova sa sajta ordinacije. Individualno uputstvo za pranje zuba dobićete na pregledu.</p></div></div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px clamp(40px,5vw,72px)">
+      <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Redovno uklanjanje naslaga</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Prema tekstu sa sajta, kada se naslage redovno uklanjaju pravilnim pranjem zuba, manji je rizik od zapaljenja desni.</p></div>
+      <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Pravilno pranje</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Na pregledu Vam pokažemo kako da perete zube, a na kontrolama proverimo kako ide. Tehnika, četkica i dodatna sredstva zavise od Vaših zuba i desni.</p></div>
+      <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:14px;border-top:1px solid #163B53;padding-top:20px"><h3 style="font-size:19px;font-weight:600;margin:0">Kada da se javite</h3><p style="font-size:16px;line-height:1.7;margin:0;color:#3A5A70;text-wrap:pretty">Ako desni krvare, otiču ili primetite promenu na zubima ili sluzokoži, ne čekajte sledeću kontrolu. Pozovite ordinaciju.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="deca" style="background:#DCECF2">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,112px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:720px"><span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#176F80">Deca i trudnoća</span><h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0;text-wrap:balance">Preventiva počinje rano</h2><p style="font-size:17px;line-height:1.7;margin:0;color:#24475E;text-wrap:pretty">Više o zubima dece pročitajte na stranici <a href="Dr%20Jakovljevic%20-%20Decija%20stomatologija.dc.html" style="color:#176F80;text-decoration:underline;text-underline-offset:3px" style-hover="color:#163B53">Dečija stomatologija</a>.</p></div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px">
+      <div style="flex:1 1 280px;background:#FFFFFF;border-radius:10px;padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:12px"><h3 style="font-size:18px;font-weight:600;line-height:1.35;margin:0">Zalivanje fisura</h3><p style="font-size:16px;line-height:1.65;margin:0;color:#24475E;text-wrap:pretty">Fisure su uska udubljenja na žvačnoj površini zuba, u koja vlakno četkice ne može da uđe. Zalivanjem se ta udubljenja zatvaraju. Da li je potrebno Vašem detetu, proceniće stomatolog.</p></div>
+      <div style="flex:1 1 280px;background:#FFFFFF;border-radius:10px;padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:12px"><h3 style="font-size:18px;font-weight:600;line-height:1.35;margin:0">Povrede zuba</h3><p style="font-size:16px;line-height:1.65;margin:0;color:#24475E;text-wrap:pretty">Prema tekstu sa sajta, povrede zuba najčešće se dešavaju kod dece: u igri, na fizičkom vaspitanju i u sportu. Ako se zub povredi ili izbije, odmah pozovite stomatologa.</p></div>
+      <div style="flex:1 1 280px;background:#FFFFFF;border-radius:10px;padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:12px"><h3 style="font-size:18px;font-weight:600;line-height:1.35;margin:0">U trudnoći</h3><p style="font-size:16px;line-height:1.65;margin:0;color:#24475E;text-wrap:pretty">Bakterije povezane sa nastankom karijesa mogu se prenositi bliskim kontaktom. Zato je važno voditi računa o oralnom zdravlju i tokom trudnoće. Za individualne savete obratite se stomatologu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="opsirnije" style="max-width:1200px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between;align-items:flex-end">
+      <h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(26px,2.8vw,36px);line-height:1.15;margin:0">Tekstovi za čitanje</h2>
+      <span style="font-size:14px;color:#5B7789">Otvaraju se na postojećem sajtu ordinacije.</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:1px;background:#DCECF2;border:1px solid #DCECF2;border-radius:6px;overflow:hidden">
+      <sc-for list="{{ reading }}" as="r" hint-placeholder-count="5">
+        <a href="{{ r.href }}" target="_blank" rel="noopener" style="flex:1 1 {{ readBasis }};background:#FFFFFF;padding:22px 24px;min-height:72px;display:flex;justify-content:space-between;align-items:center;gap:16px;color:#163B53;font-size:16px;font-weight:500;transition:background .18s ease" style-hover="background:#F8FAFC;color:#163B53"><span style="display:flex;flex-direction:column;gap:4px">{{ r.title }}<span style="font-size:13px;font-weight:400;line-height:1.5;color:#5B7789">{{ r.note }}</span></span><span aria-hidden="true" style="color:#1D8295">↗</span></a>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;border-top:1px solid #DCECF2;padding-top:24px">
+      <a href="Dr%20Jakovljevic%20-%20Rendgenologija.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;font-size:15px;font-weight:600;color:#163B53" style-hover="color:#176F80"><span aria-hidden="true">←</span> Rendgenologija</a>
+      <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;font-size:15px;font-weight:600;color:#163B53" style-hover="color:#176F80">Sve usluge <span aria-hidden="true">→</span></a>
+    </div>
+</section>
+
+<section id="kontakt" style="background:#163B53;color:#FFFFFF">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:40px clamp(48px,6vw,96px);align-items:flex-end">
+    <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:24px">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8FD0DC">Zakazivanje</span>
+      <h2 style="font-family:'Source Serif 4',serif;font-weight:400;font-size:clamp(34px,4.4vw,54px);line-height:1.08;letter-spacing:-.015em;margin:0;text-wrap:balance">Vreme je za kontrolu?</h2>
+      <p style="font-size:18px;line-height:1.65;margin:0;color:#DCECF2;max-width:460px">Pozovite nas i dogovorite pregled ili uklanjanje kamenca.</p>
+      <span style="font-size:15px;color:#A9C6D4">Cara Lazara bb, Trstenik · <a href="index.html#kontakt" style="color:#8FD0DC;text-decoration:underline;text-underline-offset:3px" style-hover="color:#FFFFFF">Svi kontakt podaci</a></span>
+    </div>
+    <div style="flex:1 1 320px;max-width:440px;display:flex;flex-direction:column;gap:12px">
+      <a href="tel:+38137715100" style="min-height:64px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:clamp(19px,1.8vw,22px);font-weight:600;transition:background .18s ease" style-hover="background:#23919F;color:#FFFFFF"><span>037 715 100</span><span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85">Pozovite</span></a>
+      <a href="tel:+38137710050" style="min-height:64px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;border:1px solid #5D7E93;color:#FFFFFF;border-radius:4px;font-size:clamp(19px,1.8vw,22px);font-weight:600;transition:border-color .18s ease,background .18s ease" style-hover="border-color:#FFFFFF;background:#1B4560;color:#FFFFFF"><span>037 710 050</span><span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85">Pozovite</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#F8FAFC;border-top:1px solid #DCECF2;padding-bottom:{{ footerPad }}">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,40px) 32px;display:flex;flex-direction:column;gap:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'Source Serif 4',serif;font-size:24px">Dr Jakovljević</span>
+        <span style="font-size:14px;line-height:1.6;color:#3A5A70">Stomatološka ordinacija<br>Cara Lazara bb, Trstenik</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Stranica</span>
+        <a href="index.html" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Početna</a>
+        <a href="Dr%20Jakovljevic%20-%20Usluge.dc.html" style="font-size:15px;color:#176F80;font-weight:600">Usluge</a>
+        <a href="index.html#o-ordinaciji" style="font-size:15px;color:#163B53" style-hover="color:#176F80">O ordinaciji</a>
+        <a href="index.html#kako-radimo" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Kako radimo</a>
+        <a href="index.html#kontakt" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Kontakt</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Za pacijente</span>
+        <a href="https://www.drjakovljevic.rs/index.php/main-faq" target="_blank" rel="noopener" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Česta pitanja ↗</a>
+        <a href="https://www.drjakovljevic.rs/index.php/main-faq/recnik-stomatoloskih-izraza" target="_blank" rel="noopener" style="font-size:15px;color:#163B53" style-hover="color:#176F80">Rečnik stručnih izraza ↗</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5B7789">Telefoni</span>
+        <a href="tel:+38137715100" style="font-size:15px;color:#163B53" style-hover="color:#176F80">037 715 100</a>
+        <a href="tel:+38137710050" style="font-size:15px;color:#163B53" style-hover="color:#176F80">037 710 050</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #DCECF2;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;line-height:1.6;color:#5B7789">
+      <span><strong style="color:#163B53">Nezvanični koncept redizajna.</strong> Ova stranica nije zvanična internet prezentacija ordinacije niti je od nje odobrena.</span>
+      <span>Stručni sadržaj je prepričan sa postojećeg sajta ordinacije.</span>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{ showCallBar }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:#FFFFFF;border-top:1px solid #DCECF2;padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:2fr 1fr;gap:8px;box-shadow:0 -6px 24px rgba(22,59,83,.08)">
+    <a href="tel:+38137715100" style="height:50px;display:flex;align-items:center;justify-content:center;background:#1D8295;color:#FFFFFF;border-radius:4px;font-size:16px;font-weight:600">Pozovite 037 715 100</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Cara+Lazara+bb+Trstenik" target="_blank" rel="noopener" style="height:50px;display:flex;align-items:center;justify-content:center;border:1px solid #163B53;color:#163B53;border-radius:4px;font-size:16px;font-weight:600">Mapa</a>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1440, y: 0, menuOpen: false, contactVisible: false };
+  componentDidMount() {
+    this.onResize = () => { this.setState({ w: window.innerWidth, menuOpen: window.innerWidth >= 960 ? false : this.state.menuOpen }); this.tick(); };
+    this.onScroll = () => this.tick();
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.tick();
+    const id = decodeURIComponent((location.hash || '').slice(1));
+    if (id) {
+      let n = 0;
+      const go = () => {
+        const t = document.getElementById(id);
+        if (t) {
+          let user = false;
+          const stop = () => { user = true; };
+          ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(e => window.addEventListener(e, stop, { once: true, passive: true }));
+          const snap = () => { if (!user) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 76, behavior: 'auto' }); };
+          snap();
+          [150, 400, 800, 1400, 2200, 3200].forEach(ms => setTimeout(snap, ms));
+        } else if (n++ < 200) setTimeout(go, 50);
+      };
+      setTimeout(go, 30);
+    }
+  }
+  tick() {
+    const vh = window.innerHeight;
+    const y = window.scrollY;
+    const c = document.getElementById('kontakt');
+    const cv = !!c && c.getBoundingClientRect().top < vh;
+    if ((y > 420) !== (this.state.y > 420) || cv !== this.state.contactVisible) this.setState({ y, contactVisible: cv });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+  }
+  renderVals() {
+    const isDesktop = this.state.w >= 960;
+    const isMobile = this.state.w < 768;
+    const k = 'https://www.drjakovljevic.rs/index.php/';
+    return {
+      isDesktop,
+      isCompact: !isDesktop,
+      menuOpen: this.state.menuOpen && !isDesktop,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      showCallBar: isMobile && this.state.y > 420 && !this.state.contactVisible && !this.state.menuOpen,
+      footerPad: isMobile ? '72px' : '0px',
+      stepCols: this.state.w >= 900 ? 'repeat(4,minmax(0,1fr))' : this.state.w >= 560 ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)',
+      readBasis: this.state.w >= 960 ? 'calc(25% - 1px)' : this.state.w >= 600 ? 'calc(50% - 1px)' : '100%',
+      faq: [
+        ['Da li je ortodoncija samo za decu?','Nije. Prema tekstu sa sajta, aparat nose i odrasli. Kod dece se zubi lakše pomeraju jer vilice još rastu.'],
+        ['Da li su fiksni aparati bolji od mobilnih?','Prema tekstu sa sajta, to se ne može reći. Sve zavisi od slučaja, a vrstu aparata određuje ortodont.'],
+        ['Šta ako se bravica odlepi?','Prema tekstu sa sajta, odlepljena bravica se ponovo postavlja na kontroli. Javite se ordinaciji da se dogovorite kada da dođete. Ako bravicu slučajno progutate, obratite se lekaru ili stomatologu. Ako imate kašalj, gušenje ili otežano disanje, odmah pozovite hitnu pomoć (194).']
+      ].map(([q, a], i) => { const open = (this.state.faqOpen || {})[i] === true; return { q, a, btnId: 'faq-q' + i, panelId: 'faq-a' + i, expanded: open ? 'true' : 'false', hidden: !open, icon: open ? '−' : '+', toggle: () => this.setState(s => ({ faqOpen: { ...(s.faqOpen || {}), [i]: !((s.faqOpen || {})[i] === true) } })) }; }),
+      reading: [
+        { title: 'Preventiva', note: 'Uvodni tekst i spisak mera', href: 'https://www.drjakovljevic.rs/index.php/informacije-za-pacijente/preventiva' },
+        { title: 'Preventivne mere', note: 'Kod bolesti desni', href: 'https://www.drjakovljevic.rs/index.php/preventivne-mere' },
+        { title: 'Korisni saveti', note: 'Naslage, kamenac i desni', href: 'https://www.drjakovljevic.rs/index.php/informacije-za-pacijente/parodontologija/korisni-saveti' },
+        { title: 'Zalivanje fisura', note: 'Zaštita žvačnih površina', href: 'https://www.drjakovljevic.rs/index.php/informacije-za-pacijente/decija-stomatologija/decija-korisne-informacije/98-zalivanje-fisura' },
+        { title: 'Pranje zuba', note: 'Saveti za decu i odrasle', href: 'https://www.drjakovljevic.rs/index.php/informacije-za-pacijente/decija-stomatologija/decija-korisne-informacije/101-pranje-zuba' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
